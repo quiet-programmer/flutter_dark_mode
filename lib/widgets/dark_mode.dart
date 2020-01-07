@@ -9,20 +9,12 @@ class DarkMode extends StatefulWidget {
 }
 
 class _DarkModeState extends State<DarkMode> {
-  var _countMe = 0;
 
   bool _nextScreen = false;
 
   void _changeTheme(){
     DarkScreen.of(context).changeTheme();
   }
-
-  // void _countPrint() {
-  //   //DarkScreen.of(context).changeTheme();
-  //   setState(() {
-  //     _countMe++;
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -70,14 +62,6 @@ class _DarkModeState extends State<DarkMode> {
           ],
         ),
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   child:
-      //       Icon(Brightness.dark != null ? Icons.brightness_3 : Icons.wb_sunny),
-      //   tooltip: "Change Theme",
-      //   onPressed: () {
-      //     _countPrint();
-      //   },
-      // ),
     );
   }
 }
