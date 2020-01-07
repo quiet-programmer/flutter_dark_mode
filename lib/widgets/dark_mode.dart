@@ -9,10 +9,13 @@ class DarkMode extends StatefulWidget {
 }
 
 class _DarkModeState extends State<DarkMode> {
-
   bool _nextScreen = false;
 
-  void _changeTheme(){
+  var _name;
+
+  //TextEditingController name = TextEditingController();
+
+  void _changeTheme() {
     DarkScreen.of(context).changeTheme();
   }
 
@@ -26,18 +29,11 @@ class _DarkModeState extends State<DarkMode> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "Bobby Welcome's you",
-              style: TextStyle(fontFamily: 'serif', fontSize: 30.0),
-            ),
-            SizedBox(
-              height: 10,
-            ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text("Dark Mode"),
-
                 Switch(
                   value: _nextScreen,
                   onChanged: (value) {
@@ -47,12 +43,47 @@ class _DarkModeState extends State<DarkMode> {
                     });
                   },
                 ),
-
                 Text("Light mode"),
               ],
             ),
+
+            Container(
+              margin: EdgeInsets.only(left: 10.0, right: 10.0),
+              child: TextField(
+               onChanged: (value){
+                 _name = value;
+               },
+                decoration: InputDecoration(
+                  labelText: "Email",
+                  labelStyle: Theme.of(context).textTheme.title,
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5.0)),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 10.0, right: 10.0),
+              child: TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  labelText: "Password",
+                  labelStyle: Theme.of(context).textTheme.title,
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5.0)),
+                ),
+              ),
+            ),
+
+            SizedBox(
+              height: 20,
+            ),
+
             RaisedButton(
-              child: Text("Go there"),
+              elevation: 5.0,
+              child: Text("Login"),
               color: Theme.of(context).primaryColor,
               onPressed: () {
                 Navigator.push(context,

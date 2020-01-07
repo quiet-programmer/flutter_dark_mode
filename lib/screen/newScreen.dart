@@ -10,7 +10,7 @@ class _NewScreenState extends State<NewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("New Screen"),
+        title: Text("Profile Screen"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
