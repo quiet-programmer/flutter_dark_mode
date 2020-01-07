@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown
-    ])
+    ]);
+    
     return DarkScreen(
       defaultBrightness: Brightness.dark,
       builder: (context, _brightness) {
