@@ -27,6 +27,25 @@ class _DarkModeState extends State<DarkMode> {
     );
   }
 
+  Widget _showSwitch() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Text("Dark Mode"),
+        Switch(
+          value: _nextScreen,
+          onChanged: (value) {
+            setState(() {
+              _nextScreen = value;
+              _changeTheme();
+            });
+          },
+        ),
+        Text("Light mode"),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,22 +57,7 @@ class _DarkModeState extends State<DarkMode> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             _getImage(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text("Dark Mode"),
-                Switch(
-                  value: _nextScreen,
-                  onChanged: (value) {
-                    setState(() {
-                      _nextScreen = value;
-                      _changeTheme();
-                    });
-                  },
-                ),
-                Text("Light mode"),
-              ],
-            ),
+            _showSwitch(),
             Container(
               margin: EdgeInsets.only(left: 10.0, right: 10.0),
               child: TextField(
