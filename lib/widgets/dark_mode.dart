@@ -19,6 +19,14 @@ class _DarkModeState extends State<DarkMode> {
     DarkScreen.of(context).changeTheme();
   }
 
+  Widget _getImage() {
+    return Image.asset(
+      'images/moon.png',
+      width: 200.0,
+      height: 150.0,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,13 +37,7 @@ class _DarkModeState extends State<DarkMode> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-
-            Image.asset(
-              'images/moon.png',
-              width: 200.0,
-              height: 150.0,
-            ),
-
+            _getImage(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -52,13 +54,12 @@ class _DarkModeState extends State<DarkMode> {
                 Text("Light mode"),
               ],
             ),
-
             Container(
               margin: EdgeInsets.only(left: 10.0, right: 10.0),
               child: TextField(
-               onChanged: (value){
-                 _name = value;
-               },
+                onChanged: (value) {
+                  _name = value;
+                },
                 decoration: InputDecoration(
                   labelText: "Email",
                   labelStyle: Theme.of(context).textTheme.title,
@@ -67,9 +68,7 @@ class _DarkModeState extends State<DarkMode> {
                 ),
               ),
             ),
-            SizedBox(
-              height: 10
-            ),
+            SizedBox(height: 10),
             Container(
               margin: EdgeInsets.only(left: 10.0, right: 10.0),
               child: TextField(
@@ -82,11 +81,9 @@ class _DarkModeState extends State<DarkMode> {
                 ),
               ),
             ),
-
             SizedBox(
               height: 20,
             ),
-
             RaisedButton(
               elevation: 5.0,
               child: Text("Login"),
