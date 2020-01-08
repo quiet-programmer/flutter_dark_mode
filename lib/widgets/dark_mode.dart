@@ -30,6 +30,12 @@ class _DarkModeState extends State<DarkMode> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
 
+            Image.asset(
+              'images/moon.png',
+              width: 200.0,
+              height: 150.0,
+            ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
